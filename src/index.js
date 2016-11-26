@@ -1,6 +1,6 @@
 import DOMReady from './utils/DOMReady';
-import main from './main.jsx';
+import mainView from './mainView';
 
 DOMReady(() => {
-  main();
+  mainView();
 });

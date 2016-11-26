@@ -1,6 +1,7 @@
 var jsPlugin = require("bit-loader-js");
 var eslintPlugin = require("bit-eslint");
 var babelPlugin = require("bit-loader-babel");
+var extensionsPuglin = require("bit-loader-extensions");
 var builtins = require("bit-loader-builtins");
 var minifyjs = require("bit-bundler-minifyjs");
 var extractsm = require("bit-bundler-extractsm");
@@ -15,6 +16,7 @@ module.exports = {
     }],
     loader: {
       plugins: [
+        extensionsPuglin(["jsx"]),
         eslintPlugin({ extensions: ["js", "jsx"] }),
         jsPlugin({ extensions: ["js", "jsx"] }),
         babelPlugin({
