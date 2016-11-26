@@ -1,5 +1,5 @@
 {
-  "name": "bundler-react-app",
+  "name": "bundler-reactor",
   "version": "0.0.0",
   "description": "bit-bundler boiplerplate for react apps",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MiguelCastillo/bundler-react-app.git"
+    "url": "git+https://github.com/MiguelCastillo/bundler-reactor.git"
   },
   "keywords": [
     "bit-bundler"
@@ -17,9 +17,9 @@
   "author": "Miguel Castillo <manchagnu@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MiguelCastillo/bundler-react-app/issues"
+    "url": "https://github.com/MiguelCastillo/bundler-reactor/issues"
   },
-  "homepage": "https://github.com/MiguelCastillo/bundler-react-app#readme",
+  "homepage": "https://github.com/MiguelCastillo/bundler-reactor#readme",
   "devDependencies": {
     "babel-preset-react": "^6.16.0",
     "bit-bundler": "^5.3.1",
