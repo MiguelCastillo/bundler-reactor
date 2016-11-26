@@ -1,6 +1,6 @@
 {
   "name": "bundler-reactor",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "bit-bundler boiplerplate for react apps",
   "main": "index.js",
   "bin": {
