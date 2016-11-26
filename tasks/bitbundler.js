@@ -2,7 +2,7 @@ var jsPlugin = require("bit-loader-js");
 var eslintPlugin = require("bit-eslint");
 var babelPlugin = require("bit-loader-babel");
 var extensionsPuglin = require("bit-loader-extensions");
-var builtins = require("bit-loader-builtins");
+var nodeBuiltins = require("bit-loader-builtins");
 var minifyjs = require("bit-bundler-minifyjs");
 var extractsm = require("bit-bundler-extractsm");
 var splitter = require("bit-bundler-splitter");
@@ -25,7 +25,7 @@ module.exports = {
             presets: ["es2015", "react"]
           }
         }),
-        builtins()
+        nodeBuiltins()
       ]
     }
   },
