@@ -1,7 +1,7 @@
 module.exports = {
   "dev": {
     "files": [
-      "dist/**/*.js",
+      "dist/*.js",
       "src/*.html",
       "img/*"
     ],
