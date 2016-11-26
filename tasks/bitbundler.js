@@ -1,4 +1,3 @@
-var Bitbundler = require("bit-bundler");
 var jsPlugin = require("bit-loader-js");
 var eslintPlugin = require("bit-eslint");
 var babelPlugin = require("bit-loader-babel");
@@ -9,15 +8,12 @@ var splitter = require("bit-bundler-splitter");
 var babelCore = require("babel-core");
 
 module.exports = {
-  dev: {
-    Bitbundler: Bitbundler,
-    watch: true,
+  options: {
     files: [{
       src: "src/index.js",
       dest: "dist/index.js"
     }],
     loader: {
-      extensions: ["jsx"],
       plugins: [
         eslintPlugin({ extensions: ["js", "jsx"] }),
         jsPlugin({ extensions: ["js", "jsx"] }),
@@ -29,7 +25,10 @@ module.exports = {
         }),
         builtins()
       ]
-    },
+    }
+  },
+  dev: {
+    watch: true,
     bundler: {
       plugins: [
         splitter("dist/vendor.js", { match: { path: /\/node_modules\// } }),
@@ -38,24 +37,6 @@ module.exports = {
     }
   },
   build: {
-    Bitbundler: Bitbundler,
-    files: [{
-      src: "src/index.js",
-      dest: "dist/index.js"
-    }],
-    loader: {
-      plugins: [
-        eslintPlugin({ extensions: ["js", "jsx"] }),
-        jsPlugin({ extensions: ["js", "jsx"] }),
-        babelPlugin({
-          core: babelCore,
-          options: {
-            presets: ["es2015", "react"]
-          }
-        }),
-        builtins()
-      ]
-    },
     bundler: {
       plugins: [
         splitter("dist/vendor.js", { match: { path: /\/node_modules\// } }),
