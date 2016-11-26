@@ -55,5 +55,5 @@ $ npm run build
 
 # grunt tasks
 
-Internally, `bundler-reactor` uses [Grunt](http://gruntjs.com/) to manage tasks. The relevant tasks are exposed as npm scripts as well for convenience. All the tasks are available in the [tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup. For example, if you need to add JS decorators support you can enhance the `bitbundler` task to do so.
+Internally, `bundler-reactor` uses [Grunt](http://gruntjs.com/) to manage tasks. The relevant tasks are exposed as npm scripts as well for convenience. All the tasks are available in the [tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup. For example, if you need to add JS decorators support you can enhance the `bitbundler` task to do so.
 
