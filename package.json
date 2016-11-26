@@ -4,7 +4,8 @@
   "description": "bit-bundler boiplerplate for react apps",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "grunt serve",
+    "build": "grunt build"
   },
   "repository": {
     "type": "git",
