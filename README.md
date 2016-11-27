@@ -3,16 +3,18 @@
 
 This gives you a good starting point with tools and default settings optimized for building applications with [react](https://facebook.github.io/react/). The underlying setup relies on modularized [Grunt](http://gruntjs.com/) tasks that lend themselves well for enhancing the default configuration; this whole boilerplate setup is meant to be built upon and enhanced.
 
-The setup provides you with:
+# stack and feature support
 
 - [dev server](https://github.com/gruntjs/grunt-contrib-connect)
-  - Configured with Single Page in mind with [browser history](https://github.com/bripkens/connect-history-api-fallback) enabled.
+  - Configured as a Single Page Application with [browser history API](https://github.com/bripkens/connect-history-api-fallback)
 - [bit-bundler](https://github.com/MiguelCastillo/bit-bundler)
   - Code splitting of third party libraries
-  - ESLint integration
-  - Babel interation
+  - Handle `import` and `require` statements
+  - ES6 (ES2015) and JSX support
+    - Babel interation
+    - ESLint integration
   - File watching and Livereload
-  - CSS file importing from JavaScript
+  - Bundle CSS and JSON
   - Bundle http resources such as CSS stored in a CDN
 - [react](https://facebook.github.io/react/) with JSX support
 
