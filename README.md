@@ -11,7 +11,8 @@ The setup provides you with:
   - Code splitting of third party libraries
   - ESLint integration
   - Babel interation
-  - File watching
+  - File watching and Livereload
+  - CSS file importing from JavaScript
 - [react](https://facebook.github.io/react/) with JSX support
 
 

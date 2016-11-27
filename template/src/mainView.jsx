@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './style/application';
 
 export default function () {
   ReactDOM.render(

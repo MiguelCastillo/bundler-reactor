@@ -3,6 +3,8 @@ var eslintPlugin = require("bit-eslint");
 var babelPlugin = require("bit-loader-babel");
 var extensionsPuglin = require("bit-loader-extensions");
 var nodeBuiltins = require("bit-loader-builtins");
+var cssPlugin = require("bit-loader-css");
+var jsonPlugin = require("bit-loader-json");
 var minifyjs = require("bit-bundler-minifyjs");
 var extractsm = require("bit-bundler-extractsm");
 var splitter = require("bit-bundler-splitter");
@@ -16,10 +18,12 @@ module.exports = {
     }],
     loader: {
       plugins: [
-        extensionsPuglin(["js", "jsx"]),
+        extensionsPuglin(["js", "jsx", "css", "json"]),
         eslintPlugin({ extensions: ["js", "jsx"] }),
         jsPlugin({ extensions: ["js", "jsx"] }),
         babelPlugin({ core: babelCore }),
+        cssPlugin(),
+        jsonPlugin(),
         nodeBuiltins()
       ]
     }
