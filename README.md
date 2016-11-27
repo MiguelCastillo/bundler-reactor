@@ -87,6 +87,12 @@ There are very specific things that get updated:
 
 Data is carefully merged to avoid overriding your data; update will *only* touch data used by `bundler-reactor`. However, if you have customized any of the dependencies, devDependencies, scripts, and or tasks introduced by `bundler-reactor` then you *should NOT* use the update feature unless you are *OK* letting `bundler-reactor` replace any of it.
 
+What is *NOT* updated:
+
+- .eslintrc.json
+- .babelrc
+- src
+
 From the directory of an already existing application:
 
 ```
