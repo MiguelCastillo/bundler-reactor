@@ -55,5 +55,12 @@ $ npm run build
 
 # grunt tasks
 
-Internally, `bundler-reactor` uses [Grunt](http://gruntjs.com/) to manage tasks. The relevant tasks are exposed as npm scripts as well for convenience. All the tasks are available in the [tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup. For example, if you need to add JS decorators support you can enhance the `bitbundler` task to do so.
+Internally, `bundler-reactor` uses [Grunt](http://gruntjs.com/) to manage tasks. The relevant tasks are exposed as npm scripts as well for convenience. All the tasks are available in the [tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
 
+# babel
+
+The babel integration supports [.babelrc](http://babeljs.io/docs/usage/babelrc/), and `bundler-reactor` will setup one for you. Do leverage this file to further enhance your processing pipeline.
+
+# eslint
+
+The eslint integration supports [.eslintrc.json](http://eslint.org/docs/user-guide/configuring#configuration-file-formats), and `bundler-reactor` will setup one up for you with some sensible default. Please do adjust this file to fit your needs.
