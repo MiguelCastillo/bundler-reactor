@@ -33,8 +33,7 @@
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-watch": "^1.0.0",
-    "load-grunt-tasks": "^3.5.2",
-    "request": "^2.79.0"
+    "load-grunt-tasks": "^3.5.2"
   },
   "dependencies": {
     "react": "^15.4.1",
