@@ -19,12 +19,7 @@ module.exports = {
         extensionsPuglin(["js", "jsx"]),
         eslintPlugin({ extensions: ["js", "jsx"] }),
         jsPlugin({ extensions: ["js", "jsx"] }),
-        babelPlugin({
-          core: babelCore,
-          options: {
-            presets: ["es2015", "react"]
-          }
-        }),
+        babelPlugin({ core: babelCore }),
         nodeBuiltins()
       ]
     }
