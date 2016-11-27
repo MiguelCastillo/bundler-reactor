@@ -10,6 +10,7 @@ The setup provides you with:
 - [bit-bundler](https://github.com/MiguelCastillo/bit-bundler)
   - Code splitting of third party libraries
   - ESLint integration
+  - Babel interation
   - File watching
 - [react](https://facebook.github.io/react/) with JSX support
 
