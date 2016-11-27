@@ -13,6 +13,7 @@ The setup provides you with:
   - Babel interation
   - File watching and Livereload
   - CSS file importing from JavaScript
+  - Bundle http resources such as CSS stored in a CDN
 - [react](https://facebook.github.io/react/) with JSX support
 
 
