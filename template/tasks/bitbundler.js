@@ -5,6 +5,7 @@ var extensionsPuglin = require("bit-loader-extensions");
 var nodeBuiltins = require("bit-loader-builtins");
 var cssPlugin = require("bit-loader-css");
 var jsonPlugin = require("bit-loader-json");
+var httpResourcePlugin = require("bit-loader-httpresource");
 var minifyjs = require("bit-bundler-minifyjs");
 var extractsm = require("bit-bundler-extractsm");
 var splitter = require("bit-bundler-splitter");
@@ -19,6 +20,7 @@ module.exports = {
     loader: {
       plugins: [
         extensionsPuglin(["js", "jsx", "css", "json"]),
+        httpResourcePlugin(),
         eslintPlugin({ extensions: ["js", "jsx"] }),
         jsPlugin({ extensions: ["js", "jsx"] }),
         babelPlugin({ core: babelCore }),
