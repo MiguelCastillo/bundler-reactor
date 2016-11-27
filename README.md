@@ -12,6 +12,7 @@ The setup provides you with:
   - ESLint integration
   - Babel interation
   - File watching and Livereload
+  - CSS file importing from JavaScript
 - [react](https://facebook.github.io/react/) with JSX support
 
 
