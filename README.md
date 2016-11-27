@@ -46,7 +46,7 @@ $ npm start
 
 ## npm run build
 
-To create a production build:
+Create a production build:
 
 ```
 $ npm run build
