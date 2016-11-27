@@ -40,6 +40,7 @@ $ cd sample-app
 $ npm install
 ```
 
+
 ## npm start
 
 Start the dev server:
@@ -55,6 +56,41 @@ Create a production build:
 
 ```
 $ npm run build
+```
+
+
+## bundler-reactor create
+
+The default to create an application is `create`. This is the action that is executed when invoking `bundler-reactor` without an action.
+
+```
+$ bundler-reactor create sample-app
+```
+
+is equivalent to
+
+```
+$ bundler-reactor sample-app
+```
+
+## bundler-reactor update
+
+This gives you the ability to update an already existing setup as well as to help in the migration to new `bundler-reactor` features.
+
+There are very specific things that get updated:
+
+- tasks
+- package.json
+  - scripts
+  - devDependencies
+  - dependencies
+
+Data is carefully merged to avoid overriding your data; update will *only* touch data used by `bundler-reactor`. However, if you have customized any of the dependencies, devDependencies, scripts, and or tasks introduced by `bundler-reactor` then you *should NOT* use the update feature unless you are *OK* letting `bundler-reactor` replace any of it.
+
+From the directory of an already existing application:
+
+```
+$ bundler-reactor update
 ```
 
 
