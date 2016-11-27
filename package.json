@@ -12,7 +12,7 @@
     "url": "git+https://github.com/MiguelCastillo/bundler-reactor.git"
   },
   "keywords": [
-    "bit-bundler"
+    "bit-bundler", "react"
   ],
   "author": "Miguel Castillo <manchagnu@gmail.com>",
   "license": "MIT",
