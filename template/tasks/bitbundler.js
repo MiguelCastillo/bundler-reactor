@@ -16,7 +16,7 @@ module.exports = {
     }],
     loader: {
       plugins: [
-        extensionsPuglin(["jsx"]),
+        extensionsPuglin(["js", "jsx"]),
         eslintPlugin({ extensions: ["js", "jsx"] }),
         jsPlugin({ extensions: ["js", "jsx"] }),
         babelPlugin({

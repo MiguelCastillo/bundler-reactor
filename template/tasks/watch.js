@@ -1,15 +1,10 @@
 module.exports = {
   "dev": {
-    "files": [
-      "dist/*.js",
-      "src/*.html",
-      "img/*"
-    ],
-    "tasks": [
-      "copy:static",
-    ],
-    "options": {
-      "livereload": 32247
-    }
+    "files": ["src/*.html", "img/*"],
+    "tasks": ["copy:static"]
+  },
+  "build": {
+    "options": { "livereload": 32247 },
+    "files": ["dist/**/*", "!dist/**/*.map"]
   }
 };
