@@ -4,21 +4,21 @@
 
 var fs = require("fs-extra");
 var path = require("path");
-var jsonFormat = require("json-format");
 var options = require("subarg")(process.argv.slice(2));
+var actionsDir = path.join(__dirname, "../src/actions");
 
-var appName = options._[0];
-var appDir = path.join(process.cwd(), appName);
-var templateDir = path.join(__dirname, "../", "template");
+var actions = fs
+  .readdirSync(actionsDir)
+  .map(function(filename) {
+    return path.basename(filename, ".js");
+  });
 
-// ensure app directory exists
-fs.ensureDirSync(appDir);
+var actionName = options._[0];
+var appName = options._[1];
 
-// Copy template directory
-fs.copySync(templateDir, appDir);
+if (actions.indexOf(actionName) === -1) {
+  appName = actionName;
+  actionName = "create";
+}
 
-// Update package.json to have the correct name of the application
-var templatePackage = require("../template/package.json");
-templatePackage.name = appName;
-
-fs.writeFileSync(path.join(appDir, "package.json"), jsonFormat(templatePackage, { type: "space", size: 2}));
+require(path.join(actionsDir, actionName))(appName);
