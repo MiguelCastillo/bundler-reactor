@@ -92,6 +92,7 @@ What is *NOT* updated:
 - .eslintrc.json
 - .babelrc
 - src
+- Gruntfile.js
 
 From the directory of an already existing application:
 
