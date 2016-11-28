@@ -14,24 +14,3 @@ body {
   font-weight: 100;
   overflow: hidden;
 }
-
-#app {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-}
-
-#app-header {
-  overflow: visible;
-}
-
-#app-body {
-    flex: 1;
-    overflow: auto;
-    display: flex;
-    flex-flow: column nowrap;
-}
-
-#app-footer {
-  overflow: hidden;
-}
