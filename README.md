@@ -1,7 +1,6 @@
 # bundler-reactor
-> bit-bundler boilerplate setup for react apps.
 
-This gives you a good starting point with tools and default settings optimized for building applications with [react](https://facebook.github.io/react/). The underlying setup relies on modularized [Grunt](http://gruntjs.com/) tasks that lend themselves well for enhancing the default configuration; this whole boilerplate setup is meant to be built upon and enhanced.
+Quickly gets you up and running with a [react](https://facebook.github.io/react/) Web Application using hand picked tools and default settings optimized for the ecosystem.
 
 # stack and feature support
 
@@ -43,7 +42,7 @@ $ npm install
 
 ## npm start
 
-Start the dev server:
+Starts a development server.
 
 ```
 $ npm start
@@ -52,16 +51,18 @@ $ npm start
 
 ## npm run build
 
-Create a production build:
+Creates a production build.
 
 ```
 $ npm run build
 ```
 
 
-## bundler-reactor create
+# actions
 
-The default to create an application is `create`. This is the action that is executed when invoking `bundler-reactor` without an action.
+## create
+
+The default action. This is the action that is executed when `bundler-reactor` called with just the name of an application.
 
 ```
 $ bundler-reactor create sample-app
@@ -73,14 +74,18 @@ is equivalent to
 $ bundler-reactor sample-app
 ```
 
-## bundler-reactor update
+## update
+
+```
+$ bundler-reactor update
+```
 
 This gives you the ability to update an already existing setup as well as to help in the migration to new `bundler-reactor` features.
 
 There are very specific things that get updated:
 
-- tasks
-- package.json
+- tasks/**
+- package.json fields
   - scripts
   - devDependencies
   - dependencies
@@ -96,14 +101,10 @@ What is *NOT* updated:
 
 From the directory of an already existing application:
 
-```
-$ bundler-reactor update
-```
-
 
 # grunt tasks
 
-Internally, `bundler-reactor` uses [Grunt](http://gruntjs.com/) to manage tasks. The relevant tasks are exposed as npm scripts as well for convenience. All the tasks are available in the [tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
+Internally `bundler-reactor` relies on modularized [Grunt](http://gruntjs.com/) tasks to make it easy to tweak the default setup if need be. All the tasks are available in the [tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
 
 # babel
 
@@ -112,3 +113,13 @@ The babel integration supports [.babelrc](http://babeljs.io/docs/usage/babelrc/)
 # eslint
 
 The eslint integration supports [.eslintrc.json](http://eslint.org/docs/user-guide/configuring#configuration-file-formats), and `bundler-reactor` will setup one up for you with some sensible default. Please do adjust this file to fit your needs.
+
+# connect
+
+The development server is [connect](https://github.com/gruntjs/grunt-contrib-connect), and its configuration can be found in `tasks/connect`. This is where you configure things like proxies and livereloading ports.
+
+## proxy
+
+Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) in place with place holder stubs to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
+
+> Future work is to add a `.connectrc` for configuring items like this.
