@@ -62,19 +62,21 @@ $ npm run build
 
 ## create
 
-The default action. This is the action that is executed when `bundler-reactor` called with just the name of an application.
+The default action. This is the action that is executed when `bundler-reactor` is called with just the name of an application.
 
 ```
 $ bundler-reactor create sample-app
 ```
 
-is equivalent to
+is the same as
 
 ```
 $ bundler-reactor sample-app
 ```
 
 ## update
+
+From the directory of an already existing application:
 
 ```
 $ bundler-reactor update
@@ -90,8 +92,6 @@ There are very specific things that get updated:
   - devDependencies
   - dependencies
 
-Data is carefully merged to avoid overriding your data; update will *only* touch data used by `bundler-reactor`. However, if you have customized any of the dependencies, devDependencies, scripts, and or tasks introduced by `bundler-reactor` then you *should NOT* use the update feature unless you are *OK* letting `bundler-reactor` replace any of it.
-
 What is *NOT* updated:
 
 - .eslintrc.json
@@ -99,7 +99,7 @@ What is *NOT* updated:
 - src
 - Gruntfile.js
 
-From the directory of an already existing application:
+Data is carefully merged to avoid overriding your data; update will *only* touch data used by `bundler-reactor`. However, if you have customized any of the dependencies, devDependencies, scripts, and or tasks **introduced** by `bundler-reactor` then you *should NOT* use the update feature unless you are *OK* letting `bundler-reactor` replace any of it.
 
 
 # grunt tasks
@@ -120,6 +120,6 @@ The development server is [connect](https://github.com/gruntjs/grunt-contrib-con
 
 ## proxy
 
-Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) in place with place holder stubs to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
+Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) with place holder stubs in `tasks/connect` to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
 
 > Future work is to add a `.connectrc` for configuring items like this.
