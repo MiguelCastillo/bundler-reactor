@@ -12,6 +12,7 @@
     "url": "git+https://github.com/MiguelCastillo/bundler-reactor.git"
   },
   "keywords": [
+    "bundler",
     "bit-bundler",
     "react"
   ],
