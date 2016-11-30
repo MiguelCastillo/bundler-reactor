@@ -20,7 +20,7 @@ Quickly gets you up and running with a [react](https://facebook.github.io/react/
 
 # usage
 
-You get a few `npm` tasks to facilate the development and generating production builds.
+You get a few `npm` tasks to facilate the development and generation of production builds.
 
 
 ## quick install and setup
