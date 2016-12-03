@@ -19,10 +19,7 @@ function create(appName) {
   fs.copySync(templateDir, appDir);
 
   // Rename gitignore to .gitignore
-  fs.copySync(path.join(appDir, "gitignore"), path.join(appDir, ".gitignore"));
-
-  // Delete old gitignore
-  fs.removeSync(path.join(appDir, "gitignore"));
+  fs.move(path.join(appDir, "gitignore"), path.join(appDir, ".gitignore"), []);
 
   // Update package.json to have the correct name of the application
   var newTemplatePackage = Object.assign({}, templatePackage, {
