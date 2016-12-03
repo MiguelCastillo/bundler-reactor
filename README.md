@@ -86,6 +86,7 @@ This gives you the ability to update an already existing setup as well as to hel
 
 There are very specific things that get updated:
 
+- .bundlerrc.json
 - tasks/**
 - package.json fields
   - scripts
