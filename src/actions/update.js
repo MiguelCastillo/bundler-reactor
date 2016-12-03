@@ -8,14 +8,14 @@ var templatePackage = require(path.join(templateDir, "package.json"));
 function update(appName) {
   var appDir = path.join(process.cwd(), appName || "");
   var appPackage = require(path.join(appDir, "package.json"));
-  var appTasksDir = path.join(appDir, "tasks");
+  var appTasksDir = path.join(appDir, ".tasks");
 
   // ensure app directory exists
   fs.ensureDirSync(appDir);
   fs.ensureDirSync(appTasksDir);
 
   // copy tasks
-  fs.copySync(path.join(templateDir, "tasks"), appTasksDir);
+  fs.copySync(path.join(templateDir, ".tasks"), appTasksDir);
 
   // Update package.json to have the correct name of the application
   var newAppPackage = Object.assign({}, appPackage, {
