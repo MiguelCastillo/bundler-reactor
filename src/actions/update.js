@@ -17,8 +17,8 @@ function update(appName) {
   // copy tasks
   fs.copySync(path.join(templateDir, ".tasks"), appTasksDir);
 
-  // copy bundlerrc
-  fs.copySync(path.join(templateDir, ".bundlerrc.json"), appTasksDir);
+  // copy rc
+  fs.copySync(path.join(templateDir, ".bundlerrc.json"), path.join(appDir, ".bundlerrc.json"));
 
   // Update package.json to have the correct name of the application
   var newAppPackage = Object.assign({}, appPackage, {
