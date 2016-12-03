@@ -1,6 +1,7 @@
 var jsPlugin = require("bit-loader-js");
 var eslintPlugin = require("bit-eslint");
 var babelPlugin = require("bit-loader-babel");
+var excludesPlugin = require("bit-loader-excludes");
 var extensionsPuglin = require("bit-loader-extensions");
 var nodeBuiltins = require("bit-loader-builtins");
 var cssPlugin = require("bit-loader-css");
@@ -19,6 +20,7 @@ module.exports = {
     }],
     loader: {
       plugins: [
+        excludesPlugin([/* -- added your excludes in here */]),
         extensionsPuglin(["js", "jsx", "css", "json"]),
         httpResourcePlugin(),
         eslintPlugin({ extensions: ["js", "jsx"] }),

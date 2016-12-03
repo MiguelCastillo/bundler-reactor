@@ -19,6 +19,7 @@
     "bit-loader-builtins": "^2.0.0",
     "bit-loader-cache": "^1.0.7",
     "bit-loader-css": "^1.1.5",
+    "bit-loader-excludes": "^1.0.1",
     "bit-loader-extensions": "^1.0.1",
     "bit-loader-httpresource": "^1.0.1",
     "bit-loader-js": "^1.2.2",
