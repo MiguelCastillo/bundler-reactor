@@ -87,7 +87,7 @@ This gives you the ability to update an already existing setup as well as to hel
 There are very specific things that get updated:
 
 - .bundlerrc.json
-- tasks/**
+- .tasks/**
 - package.json fields
   - scripts
   - devDependencies
@@ -105,7 +105,7 @@ Data is carefully merged to avoid overriding your data; update will *only* touch
 
 # grunt tasks
 
-Internally `bundler-reactor` relies on modularized [Grunt](http://gruntjs.com/) tasks to make it easy to tweak the default setup if need be. All the tasks are available in the [tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
+Internally `bundler-reactor` relies on modularized [Grunt](http://gruntjs.com/) tasks to make it easy to tweak the default setup if need be. All the tasks are available in the [.tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/.tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
 
 # babel
 
@@ -117,10 +117,10 @@ The eslint integration supports [.eslintrc.json](http://eslint.org/docs/user-gui
 
 # connect
 
-The development server is [connect](https://github.com/gruntjs/grunt-contrib-connect), and its configuration can be found in `tasks/connect`. This is where you configure things like proxies and livereloading ports.
+The development server is [connect](https://github.com/gruntjs/grunt-contrib-connect), and its configuration can be found in `.tasks/connect`. This is where you configure things like proxies and livereloading ports.
 
 ## proxy
 
-Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) with place holder stubs in `tasks/connect` to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
+Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) with place holder stubs in `.tasks/connect` to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
 
 > Future work is to add a `.connectrc` for configuring items like this.
