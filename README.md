@@ -107,6 +107,10 @@ Data is carefully merged to avoid overriding your data; update will *only* touch
 
 Internally `bundler-reactor` relies on modularized [Grunt](http://gruntjs.com/) tasks to make it easy to tweak the default setup if need be. All the tasks are available in the [.tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/.tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
 
+# bit-bundler
+
+bit-bundler provides basic configuration for things like modules to exclude and pattern matching for specifying which modules are processed by which plugin. The file [.bundlerrc.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/.bundlerrc.json) facilitates the configuration.
+
 # babel
 
 The babel integration supports [.babelrc](http://babeljs.io/docs/usage/babelrc/), and `bundler-reactor` will setup one for you. Do leverage this file to further enhance your processing pipeline.
