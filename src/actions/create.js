@@ -1,9 +1,11 @@
 var fs = require("fs-extra");
 var path = require("path");
 var jsonFormat = require("json-format");
+var installDB = require("../installDB");
 
 var templateDir = path.join(__dirname, "../../", "template");
 var templatePackage = require(path.join(templateDir, "package.json"));
+
 
 function create(appName) {
   if (!appName) {
@@ -11,22 +13,22 @@ function create(appName) {
   }
 
   var appDir = path.join(process.cwd(), appName);
+  var appInstallDB = installDB(templateDir);
 
   // ensure app directory exists
   fs.ensureDirSync(appDir);
 
-  // Copy template directory
-  fs.copySync(templateDir, appDir);
-
-  // Rename gitignore to .gitignore
-  fs.move(path.join(appDir, "gitignore"), path.join(appDir, ".gitignore"), []);
-
-  // Update package.json to have the correct name of the application
-  var newTemplatePackage = Object.assign({}, templatePackage, {
-    name: appName
+  appInstallDB.files.forEach(function(file) {
+    fs.copySync(path.join(templateDir, file.src), path.join(appDir, file.dest));
   });
 
-  fs.writeFileSync(path.join(appDir, "package.json"), jsonFormat(newTemplatePackage, { type: "space", size: 2}));
+  // Update package.json to have the correct name of the application
+  var newTemplatePackage = Object.assign({}, templatePackage, { name: appName });
+  fs.writeFileSync(path.join(appDir, "package.json"), jsonFormat(newTemplatePackage, { type: "space", size: 2 }));
+
+  // Write install db.
+  fs.writeFileSync(path.join(appDir, ".install.db"), JSON.stringify(appInstallDB));
 }
+
 
 module.exports = create;
