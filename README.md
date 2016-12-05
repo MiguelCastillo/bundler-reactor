@@ -76,31 +76,18 @@ $ bundler-reactor sample-app
 
 ## update
 
+
 From the directory of an already existing application:
 
 ```
 $ bundler-reactor update
 ```
 
-This gives you the ability to update an already existing setup as well as to help in the migration to new `bundler-reactor` features.
+This gives you the ability to update `bundler-reactor` configurations. Updates are carefully applied to avoid overriding your data; *only* unmodified data used by `bundler-reactor` is updated. If for some reason automatic migration is not possible because of conflicts, errors will be logged and the migration will not complete.
 
-There are very specific things that get updated:
+NOTE: files in the `src` folder do not get updated if they are modified.
 
-- .bundlerrc.json
-- .tasks/**
-- package.json fields
-  - scripts
-  - devDependencies
-  - dependencies
-
-What is *NOT* updated:
-
-- .eslintrc.json
-- .babelrc
-- src
-- Gruntfile.js
-
-Data is carefully merged to avoid overriding your data; update will *only* touch data used by `bundler-reactor`. However, if you have customized any of the dependencies, devDependencies, scripts, and or tasks **introduced** by `bundler-reactor` then you *should NOT* use the update feature unless you are *OK* letting `bundler-reactor` replace any of it.
+> To do a migration with conflicts you need manually update the relevant files. If files should no longer be tracked for updates their corresponding entries in `.install.db` need to configured with `detached: true`.
 
 
 # grunt tasks
