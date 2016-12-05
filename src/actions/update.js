@@ -38,7 +38,7 @@ function update(appName) {
   // Always run `src` files detached to avoid preventing updates
   // when we are indeed expecting those files to be updated.
   result.forEach(function(fileStat) {
-    if (fileStat.file.dest.indexOf("src/") === 0) {
+    if (fileStat.file.dest.indexOf("src/") === 0 && fileStat.state === fracker.states.conflict) {
       fileStat.state = fracker.states.detached;
     }
   });
