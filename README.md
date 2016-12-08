@@ -65,13 +65,13 @@ $ npm run build
 The default action. This is the action that is executed when `bundler-reactor` is called with just the name of an application.
 
 ```
-$ bundler-reactor create sample-app
+$ bundler-reactor sample-app
 ```
 
 is the same as
 
 ```
-$ bundler-reactor sample-app
+$ bundler-reactor create sample-app
 ```
 
 ## update
@@ -87,18 +87,18 @@ This gives you the ability to update `bundler-reactor` configurations. Updates a
 
 NOTE: files in the `src` folder do not get updated if they are modified.
 
-> To do a migration with conflicts you need manually update the relevant files. If files should no longer be tracked for updates their corresponding entries in `.install.db` need to configured with `detached: true`.
+> To do a migration with conflicts you need manually update the relevant files. If files should no longer be tracked for updates their corresponding entries in `.bundler/install` need to configured with `detached: true`.
 
 
 # grunt tasks
 
-Internally `bundler-reactor` relies on modularized [Grunt](http://gruntjs.com/) tasks to make it easy to tweak the default setup if need be. All the tasks are available in the [.tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/.tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
+Internally `bundler-reactor` relies on modularized [Grunt](http://gruntjs.com/) tasks to make it easy to tweak the default setup if need be. All the tasks are available in [.bundler/tasks](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/base/.bundler/tasks) folder where you will find tasks such as `bitbundler` and `connect`. Do feel free to modify these tasks to enhance you base setup.
 
-> Tasks used to be located in the `tasks` directory but have been moved to `.tasks` as of version 3.
+> Tasks used to be located in the `.tasks` directory but have been moved to `.bundler/tasks` as of version 4.
 
 # bit-bundler
 
-bit-bundler provides basic configuration for things like modules to exclude and pattern matching for specifying which modules are processed by which plugin. The file [.bundlerrc.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/.bundlerrc.json) facilitates the configuration.
+bit-bundler provides basic configuration for things like modules to exclude and pattern matching for specifying which modules are processed by which plugin. The file [.bundlerrc.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/base/.bundlerrc.json) facilitates the configuration.
 
 # babel
 
@@ -110,10 +110,10 @@ The eslint integration supports [.eslintrc.json](http://eslint.org/docs/user-gui
 
 # connect
 
-The development server is [connect](https://github.com/gruntjs/grunt-contrib-connect), and its configuration can be found in `.tasks/connect`. This is where you configure things like proxies and livereloading ports.
+The development server is [connect](https://github.com/gruntjs/grunt-contrib-connect), and its configuration can be found in [.bundler/tasks/connect](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/base/.bundler/tasks/connect.js). This is where you configure things like proxies and livereloading ports.
 
 ## proxy
 
-Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) with place holder stubs in `.tasks/connect` to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
+Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) with place holder stubs in `.bundler/tasks/connect` to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
 
 > Future work is to add a `.connectrc` for configuring items like this.
