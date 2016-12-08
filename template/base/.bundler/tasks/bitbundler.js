@@ -1,3 +1,4 @@
+var path = require("path");
 var jsPlugin = require("bit-loader-js");
 var eslintPlugin = require("bit-eslint");
 var babelPlugin = require("bit-loader-babel");
@@ -13,7 +14,7 @@ var splitter = require("bit-bundler-splitter");
 var babelCore = require("babel-core");
 
 // Config file
-var config = require("../.bundlerrc.json");
+var config = require(path.join(process.cwd(), ".bundlerrc.json"));
 
 module.exports = {
   options: {
@@ -57,6 +58,6 @@ module.exports = {
 
 function buildBannerString() {
   var grunt = require("grunt");
-  var package = require("../package");
+  var package = require(path.join(process.cwd(),"package"));
   return grunt.template.process("/*! <%= pkg.name %> v<%= pkg.version %> - <%= grunt.template.today() %>. (c) <%= grunt.template.today('yyyy') %> Miguel Castillo. Licensed under MIT */", { data: { pkg: package }});
 }

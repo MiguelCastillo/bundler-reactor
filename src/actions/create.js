@@ -3,7 +3,7 @@ var path = require("path");
 var jsonFormat = require("json-format");
 var installDB = require("../installDB");
 
-var templateDir = path.join(__dirname, "../../", "template");
+var templateDir = path.join(__dirname, "../../", "template/base");
 var templatePackage = require(path.join(templateDir, "package.json"));
 
 
@@ -27,7 +27,7 @@ function create(appName) {
   fs.writeFileSync(path.join(appDir, "package.json"), jsonFormat(newTemplatePackage, { type: "space", size: 2 }));
 
   // Write install db.
-  fs.writeFileSync(path.join(appDir, ".install.db"), JSON.stringify(appInstallDB));
+  fs.writeFileSync(path.join(appDir, ".bundler/.install"), JSON.stringify(appInstallDB));
 }
 
 

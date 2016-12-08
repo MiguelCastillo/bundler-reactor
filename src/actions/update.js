@@ -4,19 +4,19 @@ var jsonFormat = require("json-format");
 var fracker = require("../fracker");
 var installDB = require("../installDB");
 
-var templateDir = path.join(__dirname, "../../", "template");
+var templateDir = path.join(__dirname, "../../", "template/base");
 var templatePackage = require(path.join(templateDir, "package.json"));
 
 function update(appName) {
   var appDir = path.join(process.cwd(), appName || "");
   var appPackagePath = path.join(appDir, "package.json");
   var appPackage = require(appPackagePath);
-  var appTasksDir = path.join(appDir, ".tasks");
+  var appTasksDir = path.join(appDir, ".bundler/tasks");
   var templateInstalDB = installDB(templateDir);
   var appInstallDB;
 
   try {
-    appInstallDB = fs.readJsonSync(path.join(appDir, ".install.db"));
+    appInstallDB = fs.readJsonSync(path.join(appDir, ".bundler/.install"));
   }
   catch(ex) {
     // try to initialize a DB file from the template
@@ -90,7 +90,7 @@ function update(appName) {
     });
 
   // Write install db.
-  fs.writeFileSync(path.join(appDir, ".install.db"), JSON.stringify({ files: files }));
+  fs.writeFileSync(path.join(appDir, ".bundler/.install"), JSON.stringify({ files: files }));
 }
 
 module.exports = update;
