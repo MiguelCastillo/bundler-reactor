@@ -110,10 +110,17 @@ The eslint integration supports [.eslintrc.json](http://eslint.org/docs/user-gui
 
 # connect
 
-The development server is [connect](https://github.com/gruntjs/grunt-contrib-connect), and its configuration can be found in [.bundler/tasks/connect](https://github.com/MiguelCastillo/bundler-reactor/tree/master/template/base/.bundler/tasks/connect.js). This is where you configure things like proxies and livereloading ports.
+The development server is [connect](https://github.com/gruntjs/grunt-contrib-connect), which can be configured via [.connectrc.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/base/.connectrc.json). You can configure proxies, livereload, fallback for SPA support, and all other [connect](https://github.com/gruntjs/grunt-contrib-connect) settings.
 
-## proxy
+To configure a proxy you need to specify an object with a `source`, which is the route to match and a `target`, which is where the request is forwarded to.
 
-Currently there is a [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) with place holder stubs in `.bundler/tasks/connect` to illustrate where and how to configure proxies. Please do check out the [proxy middleware](https://github.com/gonzalocasas/node-proxy-middleware) for all available options.
+The following example will forward every call for `/api` over to `http://localhost:4000/graphql`.
 
-> Future work is to add a `.connectrc` for configuring items like this.
+``` json
+{
+  "proxies": [{
+    "source": "/api",
+    "target": "http://localhost:4000/graphql"
+  }]
+}
+```
