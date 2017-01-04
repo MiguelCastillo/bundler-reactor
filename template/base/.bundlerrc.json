@@ -6,5 +6,8 @@
   "css": { "extensions": ["css"] },
   "json": { "extensions": ["json"] },
   "httpResources": {},
-  "babel": {}
+  "babel": {},
+  "shards": {
+    "dist/vendor.js": "/node_modules/"
+  }
 }
