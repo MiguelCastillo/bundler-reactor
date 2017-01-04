@@ -7,5 +7,5 @@ module.exports = function(grunt) {
   grunt.initConfig(taskConfig);
 
   grunt.registerTask("serve", ["copy:static", "concurrent:dev"]);
-  grunt.registerTask("build", ["copy:static", "bitbundler:build"]);
+  grunt.registerTask("build", ["copy:static", "pakit:build"]);
 };
