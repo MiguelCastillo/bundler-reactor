@@ -6,7 +6,7 @@ Quickly gets you up and running with a [react](https://facebook.github.io/react/
 
 - [dev server](https://github.com/gruntjs/grunt-contrib-connect)
   - Configured as a Single Page Application with [browser history API](https://github.com/bripkens/connect-history-api-fallback)
-- [bit-bundler](https://github.com/MiguelCastillo/bit-bundler)
+- [pakit](https://github.com/MiguelCastillo/pakit)
   - Code splitting of third party libraries
   - Handle `import` and `require` statements
   - ES6 (ES2015) and JSX support
@@ -96,9 +96,9 @@ Internally `bundler-reactor` relies on modularized [Grunt](http://gruntjs.com/) 
 
 > Tasks used to be located in the `.tasks` directory but have been moved to `.bundler/tasks` as of version 4.
 
-# bit-bundler
+# pakit
 
-bit-bundler provides basic configuration for things like modules to exclude and pattern matching for specifying which modules are processed by which plugin. The file [.bundlerrc.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/base/.bundlerrc.json) facilitates the configuration.
+pakit is the bundler, and it provides basic configurations. Configurations such as modules to exclude and pattern matching for specifying which modules are processed by which plugin. The file [.bundlerrc.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/base/.bundlerrc.json) facilitates the configuration.
 
 # babel
 
