@@ -11,7 +11,7 @@
   "babel": { "extensions": ["js", "jsx"] },
   "httpresource": {},
   "builtins": {},
-  "cache": {},
+  "cache": false,
 
   "shards": {
     "dist/vendor.js": "/node_modules/"
