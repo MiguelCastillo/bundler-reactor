@@ -1,12 +1,17 @@
 {
   "excludes": [],
   "extensions": ["js", "jsx", "css", "json"],
+
   "eslint": { "extensions": ["js", "jsx"] },
+
   "js": { "extensions": ["js", "jsx"] },
   "css": { "extensions": ["css"] },
   "json": { "extensions": ["json"] },
-  "httpResources": {},
-  "babel": {},
+
+  "babel": { "extensions": ["js", "jsx"] },
+  "httpresources": {},
+  "builtins": {},
+
   "shards": {
     "dist/vendor.js": "/node_modules/"
   }
