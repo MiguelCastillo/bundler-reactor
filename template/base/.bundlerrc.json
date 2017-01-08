@@ -9,7 +9,7 @@
   "json": { "extensions": ["json"] },
 
   "babel": { "extensions": ["js", "jsx"] },
-  "httpresources": {},
+  "httpresource": {},
   "builtins": {},
 
   "shards": {
