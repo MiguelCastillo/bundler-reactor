@@ -1,14 +1,12 @@
 {
   "name": "bundler-reactor",
-  "version": "4.0.3",
+  "version": "4.0.4",
   "description": "bit-bundler boiplerplate for react apps",
   "main": "index.js",
   "bin": {
     "bundler-reactor": "bin/cli.js"
   },
-  "scripts": {
-    
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MiguelCastillo/bundler-reactor.git"
@@ -24,9 +22,7 @@
     "url": "https://github.com/MiguelCastillo/bundler-reactor/issues"
   },
   "homepage": "https://github.com/MiguelCastillo/bundler-reactor#readme",
-  "devDependencies": {
-    
-  },
+  "devDependencies": {},
   "dependencies": {
     "fs-extra": "^1.0.0",
     "gitignore-parser": "0.0.2",
