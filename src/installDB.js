@@ -6,7 +6,8 @@ var gitignoreParser = require("gitignore-parser");
 gitignore = gitignoreParser.compile(fs.readFileSync(path.join(__dirname, "../template/base/gitignore"), "utf8"));
 
 var fileMap = {
-  "gitignore": ".gitignore"
+  "gitignore": ".gitignore",
+  "npmignore": ".npmignore"
 };
 
 function createInstallDB(dir) {
