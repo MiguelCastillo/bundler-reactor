@@ -13,10 +13,12 @@ function create(appName) {
   }
 
   var appDir = path.join(process.cwd(), appName);
+  var appConfigDir = path.join(appDir, ".bundler");
   var appInstallDB = installDB(templateDir);
 
   // ensure app directory exists
   fs.ensureDirSync(appDir);
+  fs.ensureDirSync(appConfigDir);
 
   appInstallDB.files.forEach(function(file) {
     fs.copySync(path.join(templateDir, file.src), path.join(appDir, file.dest));

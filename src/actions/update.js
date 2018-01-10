@@ -11,7 +11,7 @@ function update(appName) {
   var appDir = path.join(process.cwd(), appName || "");
   var appPackagePath = path.join(appDir, "package.json");
   var appPackage = require(appPackagePath);
-  var appTasksDir = path.join(appDir, ".bundler/tasks");
+  var appConfigDir = path.join(appDir, ".bundler");
   var templateInstalDB = installDB(templateDir);
   var appInstallDB;
 
@@ -25,7 +25,7 @@ function update(appName) {
 
   // ensure app directory exists
   fs.ensureDirSync(appDir);
-  fs.ensureDirSync(appTasksDir);
+  fs.ensureDirSync(appConfigDir);
 
   var result = fracker.buildDiff({
     cwd: templateDir,

@@ -3,29 +3,29 @@
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "grunt serve",
-    "build": "grunt build"
+    "start": "run-p dev:* serve",
+    "build": "run-p build:*",
+    "serve": "3dub ./dist --watch --log false",
+    "build:js": "pakit src/index.js --dest dist/index.js",
+    "build:html": "cpx 'src/**/*.html' dist",
+    "build:css": "cpx 'src/style/spinner.css' dist",
+    "build:img": "cpx 'src/img/*' dist",
+    "dev:js": "npm run build:js -- --watch --minify false",
+    "dev:html": "npm run build:html -- --watch",
+    "dev:css": "npm run build:css -- --watch",
+    "dev:img": "npm run build:img -- --watch"
   },
   "devDependencies": {
-    "babel-core": "^6.18.2",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-preset-react": "^6.16.0",
-    "config-grunt-tasks": "^1.0.3",
-    "connect-history-api-fallback": "^1.3.0",
-    "connect-livereload": "^0.6.0",
-    "eslint-plugin-react": "^6.7.1",
-    "grunt": "^1.0.1",
-    "grunt-concurrent": "^2.3.1",
-    "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-pakit": "^0.2.0",
-    "load-grunt-tasks": "^3.5.2",
-    "node-proxy-middleware": "^0.15.2",
-    "pakit": "^0.3.0"
+    "3dub": "^1.1.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "cpx": "^1.5.0",
+    "eslint-plugin-react": "^7.5.1",
+    "npm-run-all": "^4.1.2",
+    "pakit": "^1.0.1"
   },
   "dependencies": {
-    "react": "^15.4.1",
-    "react-dom": "^15.4.1"
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   }
 }
