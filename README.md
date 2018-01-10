@@ -92,7 +92,7 @@ NOTE: files in the `src` folder do not get updated if they are modified.
 
 # npm scripts
 
-Internally `bundler-reactor` relies on npm scripts and they are all availalbe and ready to be expanded on in the `package.json` file of your project.
+`bundler-reactor` relies on npm scripts to provide you with a CLI API to work with your application. Start sever, build, etc... These npm scripts are all availalbe and ready to be expanded on in the `package.json` file of your project.
 
 # pakit
 
