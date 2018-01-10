@@ -40,12 +40,12 @@ $ npm install
 ```
 
 
-## npm start
+## npm run start
 
 Starts a development server.
 
 ```
-$ npm start
+$ npm run start
 ```
 
 
@@ -87,20 +87,23 @@ This gives you the ability to update `bundler-reactor` configurations. Updates a
 
 NOTE: files in the `src` folder do not get updated if they are modified.
 
-> To do a migration with conflicts you need to manually update the relevant files. If files should no longer be tracked for updates their corresponding entries in `.bundler/install` need to configured with `detached: true`.
+
+### conflicts
+
+To do a migration with conflicts you need to manually update the relevant files in conflict. If files should no longer be tracked for updates, their corresponding entries in `.bundler/.install` (in your project) needs to configured with `detached: true`. This will allow migrations to take place when there are conflicts and prevents updates to your files.
 
 
 # npm scripts
 
-`bundler-reactor` relies on npm scripts to provide you with a CLI API to work with your application. Start sever, build, etc... These npm scripts are all availalbe and ready to be expanded on in the `package.json` file of your project.
+`bundler-reactor` relies on npm scripts to provide you with a CLI API to work with your application. Start sever, build, etc... These npm scripts are all availalbe and ready to be expanded on in the `package.json` file in your project.
 
 # pakit
 
-pakit is the bundler, and it provides basic configurations for bundle splitting and other features that allow to articulate what you want your bundles to be like. The file [.packit.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/base/.packit.json) facilitates the configuration.
+pakit is the bundler, and it provides basic configurations for bundle splitting and other features that allow to articulate how your bundles should be created. The file [.packit.json](https://github.com/MiguelCastillo/bundler-reactor/blob/master/template/base/.packit.json) facilitates the configuration.
 
 # babel
 
-The babel integration supports [.babelrc](http://babeljs.io/docs/usage/babelrc/), and `bundler-reactor` will setup one for you. Do leverage this file to further enhance your transformation pipeline.
+The babel integration supports [.babelrc](http://babeljs.io/docs/usage/babelrc/), and `bundler-reactor` will setup one for you. Do leverage this file to enhance your transformation pipeline.
 
 # eslint
 
