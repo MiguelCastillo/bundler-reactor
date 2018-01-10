@@ -1,9 +1,13 @@
 import DOMReady from './utils/DOMReady';
-import rootView from './views/rootView';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './views/App';
 import './style/reset.css';
 import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css';
 
 DOMReady(() => {
-  // mount the root view
-  rootView();
+  ReactDOM.render(
+    <App/>,
+    document.getElementById('root')
+  );
 });
