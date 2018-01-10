@@ -1,5 +1,5 @@
 var deferred = new Promise(function(resolve) {
-  if (document.readyState === 'complete') {
+  if (document.readyState === 'complete' || document.readyState === 'interactive') {
     resolve();
   }
   else {
