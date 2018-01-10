@@ -1,0 +1,10 @@
+{
+  "protocol": "http",
+  "port": 8045,
+  "hostname": "localhost",
+  "keepalive": true,
+  "history": "index.html",
+  "livereload": 32247,
+  "watch": "dist",
+  "proxies": []
+}
