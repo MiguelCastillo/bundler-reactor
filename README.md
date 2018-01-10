@@ -87,7 +87,7 @@ This gives you the ability to update `bundler-reactor` configurations. Updates a
 
 NOTE: files in the `src` folder do not get updated if they are modified.
 
-> To do a migration with conflicts you need manually update the relevant files. If files should no longer be tracked for updates their corresponding entries in `.bundler/install` need to configured with `detached: true`.
+> To do a migration with conflicts you need to manually update the relevant files. If files should no longer be tracked for updates their corresponding entries in `.bundler/install` need to configured with `detached: true`.
 
 
 # npm scripts
